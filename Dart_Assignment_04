@@ -1,0 +1,44 @@
+//define an interface
+abstract class FileInitializer {
+  void initializerFromFile(String fileName);
+}
+
+//create a parent class using inheritance
+class ParentClass {
+  void inheritanceMethod() {
+    print("This method is inherited.");
+  }
+}
+
+//create a child class that overrides the inherited method
+class ChildClass extends ParentClass implements FileInitializer {
+  @override
+  void inheritanceMethod() {
+    print("This method is overriden in the child class.");
+  }
+
+  @override
+  void initializerFromFile(String fileName) {
+    print("Initializing data from file: $fileName");
+  }
+
+  void demonstrateLoop() {
+    for (int i = 0; i < 5; i++) {
+      print("Loop iteration: $i");
+    }
+  }
+}
+
+void main() {
+  //initialize an instance of the class
+  var child = ChildClass();
+
+  //Demonstrate method overriding
+  child.inheritanceMethod();
+
+  //Demonstrate inheritance implementation
+  child.initializerFromFile("data.txt");
+
+  //DEmonstrate the use of loop
+  child.demonstrateLoop();
+}
